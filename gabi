@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriela García Guevara | GenAI Portfolio</title>
+    <title>Gabriela García Guevara | Portafolio GenAI</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            /* Paleta en tonos verdes */
-            --primary: #10b981; /* Emerald 500 */
-            --secondary: #059669; /* Emerald 600 */
-            --accent: #34d399; /* Emerald 400 */
+            --primary: #10b981; 
+            --secondary: #059669; 
+            --accent: #34d399; 
             --bg: #020617;
         }
 
@@ -26,6 +27,7 @@
 
         .font-serif { font-family: 'Playfair Display', serif; }
 
+        /* Efecto de cristal para tarjetas y navegación */
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
@@ -39,6 +41,7 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Capa de gradiente decorativa en el fondo */
         .hero-gradient {
             position: fixed;
             top: 0;
@@ -50,6 +53,33 @@
             z-index: -1;
         }
 
+        /* Contenedor del Avatar Circular */
+        .avatar-container {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .avatar-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Animación de flotado */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating { animation: float 6s ease-in-out infinite; }
+
+        /* Estilo de enlaces de navegación */
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
@@ -70,258 +100,248 @@
             width: 100%;
         }
 
+        /* Hover para tarjetas de entregas */
         .submission-card {
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .submission-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.07);
         }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .floating { animation: float 6s ease-in-out infinite; }
     </style>
 </head>
 <body>
     <div class="hero-gradient"></div>
 
-    <!-- Navegación -->
-    <nav class="fixed top-0 w-full z-50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center glass px-6 py-3">
-            <span class="text-xl font-extrabold tracking-tighter gradient-text">G. GARCÍA</span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+    <!-- Barra de Navegación -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass px-8 py-4">
+            <span class="text-2xl font-extrabold tracking-tighter gradient-text">G. GARCÍA</span>
+            <div class="hidden lg:flex space-x-10 text-sm font-semibold uppercase tracking-widest">
                 <a href="#about" class="nav-link">Sobre mí</a>
                 <a href="#course" class="nav-link">El Curso</a>
                 <a href="#submissions" class="nav-link">Entregas</a>
                 <a href="#contact" class="nav-link">Contacto</a>
             </div>
-            <a href="#submissions" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-xs font-bold transition-all transform hover:scale-105">
-                VER TRABAJOS
+            <a href="#submissions" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all transform hover:scale-105 shadow-xl shadow-emerald-900/40">
+                PROYECTOS
             </a>
         </div>
     </nav>
 
-    <!-- Sección Hero -->
-    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-        <div class="inline-block px-4 py-1.5 mb-6 glass text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase rounded-full">
-            Médico Especialista & Investigadora de IA
+    <!-- Sección Hero (Principal) -->
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 pb-20">
+        <!-- Avatar Circular -->
+        <div class="avatar-container floating">
+            <img src="https://github.com/gabrielajgarciaguevara-bot/index.html/blob/main/WhatsApp%20Image%202026-05-10%20at%2020.52.21.jpeg?raw=true" 
+                 alt="Foto de Gabriela Johanna García Guevara" 
+                 class="avatar-image">
         </div>
-        <h1 class="text-5xl md:text-8xl font-serif mb-6 leading-tight">
+
+        <div class="inline-block px-5 py-2 mb-8 glass text-emerald-400 text-xs font-bold tracking-[0.3em] uppercase rounded-full border border-emerald-500/30">
+            Médico Reumatóloga & AI Researcher
+        </div>
+        
+        <h1 class="text-6xl md:text-8xl font-serif mb-8 leading-tight">
             Gabriela Johanna <br> <span class="gradient-text">García Guevara</span>
         </h1>
-        <p class="max-w-2xl text-gray-400 text-lg md:text-xl leading-relaxed mb-10">
-            Cerrando la brecha entre la excelencia médica y la IA Generativa. 
-            Automatizando flujos de investigación y mejorando la productividad clínica 
-            mediante innovación No-Code.
+        
+        <p class="max-w-3xl text-gray-400 text-xl md:text-2xl leading-relaxed mb-12 font-light">
+            Especialista en medicina interna y reumatología explorando la frontera de la IA Generativa para optimizar la práctica clínica e investigación.
         </p>
-        <div class="flex flex-col md:flex-row gap-4">
-            <a href="#about" class="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors">Explorar Portafolio</a>
-            <a href="https://orcid.org/0009-0005-9669-2877" target="_blank" class="px-8 py-4 glass font-bold rounded-full hover:bg-white/10 transition-colors">Perfil ORCID</a>
+        
+        <div class="flex flex-col sm:flex-row gap-6">
+            <a href="#about" class="px-10 py-5 bg-white text-black font-extrabold rounded-full hover:bg-emerald-50 transition-all transform hover:scale-105">Ver Perfil Académico</a>
+            <a href="https://orcid.org/0009-0005-9669-2877" target="_blank" class="px-10 py-5 glass font-extrabold rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-3">
+                <svg class="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.541 0 .981.44.981.981 0 .541-.44.981-.981.981s-.981-.44-.981-.981c0-.541.44-.981.981-.981zm-.816 14.542V7.124h1.631v11.796H6.553zm6.05-11.796c2.428 0 4.143 1.767 4.143 4.417 0 2.766-1.921 4.541-4.23 4.541h-1.465v2.838h-1.631V7.124h3.183zm-1.552 7.324h1.432c1.472 0 2.502-.911 2.502-2.311 0-1.464-1.022-2.384-2.527-2.384h-1.407v4.695z"/></svg>
+                Perfil ORCID
+            </a>
         </div>
     </header>
 
     <!-- Sección Sobre Mí -->
-    <section id="about" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
             <div class="relative">
-                <div class="aspect-square glass rounded-3xl flex items-center justify-center overflow-hidden border-2 border-emerald-500/20">
-                    <div class="text-center p-12">
-                         <svg class="w-32 h-32 mx-auto mb-6 text-emerald-500/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                <div class="aspect-square glass rounded-[3rem] flex items-center justify-center overflow-hidden border-4 border-emerald-500/10 p-1">
+                    <div class="w-full h-full glass rounded-[2.5rem] flex flex-col items-center justify-center text-center p-12">
+                         <svg class="w-24 h-24 mb-8 text-emerald-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.628.285a2 2 0 01-1.963 0l-.628-.285a6 6 0 00-3.86-.517l-2.387.477a2 2 0 00-1.022.547V18a2 2 0 002 2h11a2 2 0 002-2v-2.572zM12 11V3.5l-1.5 1.5M12 3.5l1.5 1.5"></path>
                          </svg>
-                         <h3 class="font-serif text-2xl italic text-gray-300">Gabriela Johanna</h3>
+                         <h3 class="font-serif text-3xl text-white mb-4">Medicina & Datos</h3>
+                         <p class="text-gray-400">Integrando la expertiz clínica con la automatización responsable.</p>
                     </div>
                 </div>
-                <div class="absolute -bottom-6 -right-6 glass p-6 floating hidden md:block">
-                    <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">Ubicación</p>
-                    <p class="text-lg">Cuenca, Ecuador</p>
+                <!-- Badge Flotante -->
+                <div class="absolute -bottom-8 -right-8 glass p-8 shadow-2xl border-emerald-500/20">
+                    <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Base de Operaciones</p>
+                    <p class="text-xl font-bold">Cuenca, Ecuador</p>
                 </div>
             </div>
             
             <div>
-                <h2 class="text-4xl font-serif mb-8">Expertiz Clínica y <br><span class="text-emerald-400">Transformación Digital</span></h2>
-                <div class="space-y-6 text-gray-400 leading-relaxed">
+                <h2 class="text-5xl font-serif mb-10 leading-tight">Ciencia Médica impulsada por <span class="text-emerald-400 italic">Inteligencia Artificial</span></h2>
+                <div class="space-y-8 text-gray-400 text-lg leading-relaxed">
                     <p>
-                        Soy especialista médico con doble certificación en <strong>Medicina Interna</strong> y <strong>Reumatología</strong> por la UNAM (México). Mi formación clínica me otorga una perspectiva única sobre la complejidad de los datos en salud y la necesidad de una difusión científica eficiente.
+                        Médico por la Universidad de Cuenca y especialista en <strong>Medicina Interna y Reumatología</strong> por la UNAM (México), mi trayectoria se define por la búsqueda de la precisión en el diagnóstico de enfermedades autoinmunes.
                     </p>
                     <p>
-                        Actualmente residiendo en Cuenca, estoy ampliando mis capacidades profesionales a través del curso <em>Generative AI for Work & Research</em>. Mi objetivo es utilizar herramientas de IA no-code para automatizar tareas de investigación repetitivas, permitiendo un enfoque mayor en la práctica clínica y el paciente.
+                        Actualmente, participo en el programa <em>Generative AI for Work & Research</em> para dominar herramientas no-code que permitan automatizar la síntesis de literatura médica, el análisis de datos complejos y la creación de agentes inteligentes aplicados a la salud.
                     </p>
                 </div>
                 
-                <div class="mt-10 grid grid-cols-2 gap-4">
-                    <div class="glass p-4">
-                        <span class="block text-2xl font-bold text-white mb-1">Medicina</span>
-                        <span class="text-xs text-gray-500 uppercase tracking-tighter">Título de Tercer Nivel</span>
+                <div class="mt-12 grid grid-cols-2 gap-6">
+                    <div class="glass p-6 border-l-8 border-emerald-500">
+                        <span class="block text-3xl font-black text-white">Posgrado</span>
+                        <span class="text-sm text-gray-500 uppercase font-bold tracking-tighter">Docente UCUENCA</span>
                     </div>
-                    <div class="glass p-4">
-                        <span class="block text-2xl font-bold text-white mb-1">UNAM</span>
-                        <span class="text-xs text-gray-500 uppercase tracking-tighter">Formación Especialista</span>
+                    <div class="glass p-6 border-l-8 border-emerald-500">
+                        <span class="block text-3xl font-black text-white">Especialista</span>
+                        <span class="text-sm text-gray-500 uppercase font-bold tracking-tighter">Certificada UNAM</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección del Curso -->
-    <section id="course" class="py-24 px-6 bg-white/[0.01]">
+    <!-- Módulos del Curso -->
+    <section id="course" class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif mb-4">Generative AI for Work & Research</h2>
-                <p class="text-gray-400">Una inmersión de 8 semanas en la automatización responsable de tareas con IA.</p>
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-serif mb-6">Generative AI for Work & Research</h2>
+                <p class="text-gray-400 text-xl max-w-3xl mx-auto">Domando el poder de los LLMs para la eficiencia científica y profesional.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Módulo 1 -->
-                <div class="glass p-8 hover:bg-white/[0.05] transition-all">
-                    <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center mb-6 text-emerald-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Tarjeta Módulo -->
+                <div class="glass p-10 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-16 h-16 bg-emerald-600/20 rounded-2xl flex items-center justify-center mb-8 text-emerald-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Documentos y Portafolios</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Dominio de LLMs para investigación, Markdown, LaTeX y creación de sitios de portafolio mediante desarrollo asistido por IA.
-                    </p>
+                    <h3 class="text-2xl font-bold mb-4">Documentos Dinámicos</h3>
+                    <p class="text-gray-400 leading-relaxed">Formatos avanzados en Markdown y LaTeX, creación de portafolios web y presentaciones científicas asistidas por IA.</p>
                 </div>
 
-                <!-- Módulo 2 -->
-                <div class="glass p-8 hover:bg-white/[0.05] transition-all">
-                    <div class="w-12 h-12 bg-teal-600/20 rounded-xl flex items-center justify-center mb-6 text-teal-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                <div class="glass p-10 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-16 h-16 bg-teal-600/20 rounded-2xl flex items-center justify-center mb-8 text-teal-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Automatización de Datos</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Análisis de datos automatizado con IA, visualización y creación de GPTs personalizados para contextos de investigación médica.
-                    </p>
+                    <h3 class="text-2xl font-bold mb-4">Análisis de Datos</h3>
+                    <p class="text-gray-400 leading-relaxed">Automatización de análisis clínicos, limpieza de bases de datos y visualización de resultados mediante agentes de datos.</p>
                 </div>
 
-                <!-- Módulo 3 -->
-                <div class="glass p-8 hover:bg-white/[0.05] transition-all">
-                    <div class="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mb-6 text-green-400">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div class="glass p-10 hover:bg-white/[0.05] transition-all group">
+                    <div class="w-16 h-16 bg-green-600/20 rounded-2xl flex items-center justify-center mb-8 text-green-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Agentes y Flujos</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Construcción de flujos complejos con agentes de IA para gestionar correos, tareas web y revisiones bibliográficas.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="mt-12 p-8 glass flex flex-col md:flex-row items-center gap-8 border-l-4 border-emerald-500">
-                <div class="flex-1">
-                    <h4 class="text-lg font-bold mb-2 uppercase tracking-widest text-emerald-400">Enfoque Actual: Proyecto Final</h4>
-                    <p class="text-gray-400">Integrando conocimientos de Reumatología con agentes de IA para agilizar el análisis de artículos médicos y revisiones sistemáticas.</p>
-                </div>
-                <div class="flex space-x-2">
-                    <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span class="w-3 h-3 rounded-full bg-emerald-500 opacity-50"></span>
-                    <span class="w-3 h-3 rounded-full bg-emerald-500 opacity-20"></span>
+                    <h3 class="text-2xl font-bold mb-4">Agentes & Automatización</h3>
+                    <p class="text-gray-400 leading-relaxed">Construcción de agentes de IA para búsquedas bibliográficas sistemáticas y automatización de flujos de trabajo clínico.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Entregas -->
-    <section id="submissions" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-12">
+    <!-- Entregas de Portafolio -->
+    <section id="submissions" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div>
-                    <h2 class="text-4xl font-serif mb-2">Entregas Semanales</h2>
-                    <p class="text-gray-400">Aplicaciones prácticas de herramientas de IA durante la cohorte.</p>
+                    <h2 class="text-5xl font-serif mb-4">Hitos del Portafolio</h2>
+                    <p class="text-gray-400 text-lg">Evidencia del dominio de herramientas de IA Generativa.</p>
                 </div>
-                <span class="text-emerald-400 font-bold hidden md:block">COHORTE 2024.1</span>
+                <div class="text-emerald-400 font-black text-6xl opacity-10 hidden md:block">ENTREGAS</div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Entrega 1 -->
-                <div class="submission-card glass p-6 border-transparent hover:border-emerald-500/50 cursor-pointer">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-gray-500">SEMANA 01</span>
-                        <span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-500 text-[10px] font-bold rounded">ENTREGADO</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Semana 1 -->
+                <div class="submission-card glass p-10 flex flex-col h-full border-transparent border-2">
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="text-xs font-black text-emerald-500 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded">Semana 01</span>
+                        <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_#10b981]"></div>
                     </div>
-                    <h4 class="text-lg font-bold mb-2">Sitio Web Personal</h4>
-                    <p class="text-sm text-gray-400 mb-6">Construcción de una presencia web profesional usando código asistido por IA y estructuras Markdown.</p>
-                    <a href="#" class="text-emerald-400 text-xs font-bold flex items-center group">
-                        VER PROYECTO 
-                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
+                    <h4 class="text-2xl font-bold mb-4 italic">Web Presence & IA</h4>
+                    <p class="text-gray-400 leading-relaxed flex-grow">
+                        Diseño y despliegue de este portafolio personal, optimizado mediante prompts avanzados para estructura HTML y Tailwind CSS.
+                    </p>
+                    <div class="mt-10 pt-8 border-t border-white/5">
+                        <a href="#" class="text-emerald-400 font-bold flex items-center hover:translate-x-2 transition-transform">
+                            EXPLORAR PROYECTO
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Entrega 2 -->
-                <div class="submission-card glass p-6 border-transparent opacity-50">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-gray-500">SEMANA 02</span>
-                        <span class="px-2 py-0.5 bg-gray-500/10 text-gray-400 text-[10px] font-bold rounded">PENDIENTE</span>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">Herramienta de Análisis</h4>
-                    <p class="text-sm text-gray-400 mb-6">Visualización de sets de datos clínicos mediante gráficos automatizados por IA.</p>
-                    <span class="text-gray-600 text-xs font-bold italic">Enlace próximamente...</span>
+                <!-- Placeholders de futuras semanas -->
+                <div class="glass p-10 opacity-30 border-dashed border-2 border-white/10 flex flex-col justify-center items-center text-center">
+                    <svg class="w-12 h-12 mb-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="text-xl font-bold mb-2">Próxima Entrega</h4>
+                    <p class="text-sm">Análisis de Datos Clínicos Automatizado</p>
                 </div>
 
-                <!-- Entrega 3 -->
-                <div class="submission-card glass p-6 border-transparent opacity-50">
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="text-xs font-bold text-gray-500">SEMANA 03</span>
-                        <span class="px-2 py-0.5 bg-gray-500/10 text-gray-400 text-[10px] font-bold rounded">PENDIENTE</span>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">Agente de Investigación</h4>
-                    <p class="text-sm text-gray-400 mb-6">Creación de un GPT especializado para síntesis de literatura en Reumatología.</p>
-                    <span class="text-gray-600 text-xs font-bold italic">Enlace próximamente...</span>
+                <div class="glass p-10 opacity-30 border-dashed border-2 border-white/10 flex flex-col justify-center items-center text-center">
+                    <svg class="w-12 h-12 mb-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h4 class="text-xl font-bold mb-2">Próxima Entrega</h4>
+                    <p class="text-sm">Implementación de Agente Médico</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer / Contacto -->
-    <footer id="contact" class="py-24 px-6 border-t border-white/5">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-10">
+    <footer id="contact" class="py-32 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-start">
             <div>
-                <h2 class="text-4xl font-serif mb-4">Conectemos</h2>
-                <p class="text-gray-400 max-w-sm">¿Interesado en la intersección entre Medicina e Inteligencia Artificial? Escríbeme para colaborar.</p>
+                <h2 class="text-5xl font-serif mb-8 gradient-text font-black">Conectemos.</h2>
+                <p class="text-gray-400 text-xl mb-12 max-w-md font-light">
+                    Abierta a colaboraciones en investigación reumatológica y proyectos de transformación digital en salud.
+                </p>
                 
-                <div class="mt-8 flex justify-center md:justify-start space-x-6">
-                    <a href="https://orcid.org/0009-0005-9669-2877" target="_blank" class="hover:text-emerald-400 transition-colors">Perfil ORCID</a>
-                    <span class="text-gray-700">|</span>
-                    <span class="text-gray-500 italic">Cuenca, Ecuador</span>
+                <div class="flex flex-col sm:flex-row gap-8 text-gray-500 font-bold uppercase tracking-widest text-sm">
+                    <a href="https://orcid.org/0009-0005-9669-2877" target="_blank" class="hover:text-emerald-400 transition-colors">Orcid Profile</a>
+                    <span class="hidden sm:block text-gray-800">|</span>
+                    <span class="text-gray-400 italic">Cuenca, Azuay, Ecuador</span>
                 </div>
             </div>
             
-            <div class="glass p-10 max-w-md w-full">
-                <p class="text-sm font-bold uppercase tracking-widest mb-4 text-emerald-400">Mensaje Rápido</p>
-                <p class="text-gray-300 mb-6">Puedes contactarme a través de mis canales profesionales o consultar mis publicaciones en ORCID.</p>
-                <div class="flex space-x-4">
-                    <div class="flex-1 h-px bg-gray-800 self-center"></div>
-                    <span class="text-xs text-gray-500">G. García Guevara</span>
-                    <div class="flex-1 h-px bg-gray-800 self-center"></div>
-                </div>
+            <div class="glass p-12 relative overflow-hidden group">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/10 blur-[80px] group-hover:bg-emerald-500/20 transition-all"></div>
+                <p class="text-lg font-bold text-white mb-2">Dra. Gabriela Johanna García Guevara</p>
+                <p class="text-sm text-emerald-400 font-semibold mb-6">Médico Especialista | Investigadora IA</p>
+                <div class="w-full h-[1px] bg-white/10 mb-6"></div>
+                <p class="text-xs text-gray-500 leading-relaxed">
+                    Este portafolio es un artefacto dinámico creado como parte del programa "Generative AI for Work & Research", demostrando la aplicación de LLMs en la creación de activos digitales de alto impacto.
+                </p>
             </div>
         </div>
         
-        <div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-            <p>&copy; 2024 Gabriela Johanna García Guevara. Todos los derechos reservados.</p>
-            <p class="mt-2 md:mt-0 italic font-medium">Construido con Inteligencia Artificial y Precisión Clínica.</p>
+        <div class="max-w-7xl mx-auto mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-600 font-black uppercase tracking-[0.4em] text-center md:text-left gap-4">
+            <p>&copy; 2026 Gabriela Johanna García Guevara</p>
+            <div class="flex gap-6">
+                <span>UNAM MÉXICO</span>
+                <span>UCUENCA ECUADOR</span>
+            </div>
         </div>
     </footer>
 
     <script>
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
+        // Animaciones de Scroll suave para los elementos (Scroll reveal)
+        const observerOptions = { threshold: 0.15 };
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('section, header').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-            observer.observe(el);
+        document.querySelectorAll('section, header, .submission-card').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+            revealObserver.observe(el);
         });
     </script>
 </body>
